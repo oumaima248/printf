@@ -26,7 +26,7 @@ char fmt;
 int (*fn)(va_list, char[], int, int, int, int);
 }
 /**
- * typedef struct fmt fmt_t - Struct op
+ * typedef struct fmt fmt_t - Struct op struct fmt
  *
  * @fmt: The format.
  * @fm_t: The function associated.
