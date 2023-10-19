@@ -10,25 +10,25 @@ int get_flags(const char *format, int *i)
 {
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
-	int j, curr_i;
+	int i, curr_j;
 	int flags = 0;
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
 	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
 
-	for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
+	for (curr_j = *j + 1; format[curr_j] != '\0'; curr_j++)
 	{
-		for (j = 0; FLAGS_CH[j] != '\0'; j++)
-			if (format[curr_i] == FLAGS_CH[j])
+		for (i = 0; FLAGS_CH[i] != '\0'; i++)
+			if (format[curr_j] == FLAGS_CH[i])
 			{
-				flags |= FLAGS_ARR[j];
+				flags |= FLAGS_ARR[i];
 				break;
 			}
 
-		if (FLAGS_CH[j] == 0)
+		if (FLAGS_CH[i] == 0)
 			break;
 	}
 
-	*i = curr_i - 1;
+	*j = curr_j - 1;
 
 	return (flags);
 }
