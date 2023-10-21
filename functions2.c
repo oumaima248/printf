@@ -149,7 +149,7 @@ int print_reverse(va_list types, char buffer[],
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	char x;
+	char y;
 	char *str;
 	unsigned int i, j;
 	int count = 0;
@@ -171,16 +171,16 @@ int print_rot13string(va_list types, char buffer[],
 		{
 			if (in[j] == str[i])
 			{
-				x = out[j];
-				write(1, &x, 1);
+				y = out[j];
+				write(1, &y, 1);
 				count++;
 				break;
 			}
 		}
 		if (!in[j])
 		{
-			x = str[i];
-			write(1, &x, 1);
+			y = str[i];
+			write(1, &y, 1);
 			count++;
 		}
 	}
